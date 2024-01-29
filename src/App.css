@@ -1,42 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* breakpoints */
+  --mobile: 375px;
+  --desktop: 1400px;
+
+  /* primary colors */
+  --moderate-blue: #5457b6;
+  --soft-red: #ed6468;
+  --light-grayish-blue: #c3c4ef;
+  --pale-red: #ffb8bb;
+
+  /* secondary colors */
+  --dark-blue: #324152;
+  --grayish-blue: #67727e;
+  --light-gray: #eaecf1;
+  --very-light-gray: #f5f6fa;
+  --white: #ffffff;
+
+  /* font sizes */
+  --paragraph: 16px;
+
+  /* font weights */
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+
+  height: 100vh;
+  background-color: var(--very-light-gray);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comment {
+  padding: 24px;
+  max-width: 770px;
+  margin: auto;
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  gap: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.vote-container {
+  background-color: var(--very-light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 40px;
+  height: 100px;
+  border-radius: 10px;
+  align-self: center;
+  padding: 12px 5px 16px 5px;
 }
 
-.card {
-  padding: 2em;
+.vote-icon {
+  width: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.created-at,
+.content {
+  color: var(--grayish-blue);
+}
+
+.content {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.reply {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.reply p {
+  color: var(--moderate-blue);
+  font-weight: var(--bold);
 }
