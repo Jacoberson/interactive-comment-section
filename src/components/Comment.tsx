@@ -5,7 +5,7 @@ import avatar from "/assets/avatars/image-amyrobson.png";
 
 export default function Comment(): JSX.Element {
   return (
-    <div className="comment">
+    <div className="comment p-24">
       <div className="vote-container">
         <img className="upvote vote-icon" src={upvoteImage} alt="upvote" />
         <div className="votes">12</div>
@@ -17,7 +17,7 @@ export default function Comment(): JSX.Element {
       </div>
       <div className="comment-text">
         <div className="user-info">
-          <img className="avatar" src={avatar} alt="avatar" />
+          <img className="avatar-sm" src={avatar} alt="avatar" />
           <h3>amyrobson</h3>
           <p className="created-at">1 month ago</p>
         </div>

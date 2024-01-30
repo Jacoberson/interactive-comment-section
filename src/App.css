@@ -35,8 +35,11 @@ body {
   height: 100vh;
 }
 
-.comment {
+.p-24 {
   padding: 24px;
+}
+
+.comment {
   max-width: 770px;
   margin: auto;
   background-color: var(--white);
@@ -68,9 +71,14 @@ body {
   gap: 16px;
 }
 
-.avatar {
+.avatar-sm {
   width: 32px;
   height: 32px;
+}
+
+.avatar-lg {
+  width: 40px;
+  height: 40px;
 }
 
 .created-at,
@@ -93,4 +101,49 @@ body {
 .reply p {
   color: var(--moderate-blue);
   font-weight: var(--bold);
+}
+
+.form-container {
+  background-color: var(--white);
+  max-width: 730px;
+  margin: 10px auto;
+}
+
+.form-container .comment-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.form-container textarea {
+  flex: 1;
+  resize: none;
+  padding: 12px 24px;
+  font-size: var(--paragraph);
+  color: var(--grayish-blue);
+  border-color: var(--light-gray);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-container textarea:focus {
+  outline: none;
+  border-color: var(--moderate-blue);
+  caret-color: var(--moderate-blue);
+}
+
+.form-container button {
+  background-color: var(--moderate-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-container button:active {
+  opacity: 0.2;
 }
