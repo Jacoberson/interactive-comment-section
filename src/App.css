@@ -35,15 +35,46 @@ body {
   height: 100vh;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
 .p-24 {
   padding: 24px;
+}
+
+.br-12 {
+  border-radius: 12px;
+}
+
+.main-btn {
+  background-color: var(--moderate-blue);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-weight: var(--bold);
+  text-transform: uppercase;
+}
+
+.secondary-btn {
+  background-color: transparent;
+}
+
+.main-btn:active,
+.reply:active {
+  opacity: 0.2;
 }
 
 .comment {
   max-width: 770px;
   margin: auto;
   background-color: var(--white);
-  border-radius: 12px;
   display: flex;
   gap: 24px;
 }
@@ -56,13 +87,22 @@ body {
   align-items: center;
   min-width: 40px;
   height: 100px;
-  border-radius: 10px;
   align-self: center;
   padding: 12px 5px 16px 5px;
 }
 
 .vote-icon {
   width: 10px;
+}
+
+.vote-icon:active {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(61%) saturate(896%)
+    hue-rotate(206deg) brightness(98%) contrast(86%);
+}
+
+.votes {
+  color: var(--moderate-blue);
+  font-weight: var(--bold);
 }
 
 .user-info {
@@ -93,14 +133,11 @@ body {
 
 .reply {
   display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
   gap: 8px;
-}
-
-.reply p {
-  color: var(--moderate-blue);
+  align-self: baseline;
+  margin-top: 16px;
   font-weight: var(--bold);
+  padding: 8px;
 }
 
 .form-container {
@@ -131,19 +168,4 @@ body {
   outline: none;
   border-color: var(--moderate-blue);
   caret-color: var(--moderate-blue);
-}
-
-.form-container button {
-  background-color: var(--moderate-blue);
-  color: var(--white);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 30px;
-  font-weight: var(--bold);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.form-container button:active {
-  opacity: 0.2;
 }

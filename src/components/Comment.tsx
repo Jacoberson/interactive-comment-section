@@ -5,15 +5,19 @@ import avatar from "/assets/avatars/image-amyrobson.png";
 
 export default function Comment(): JSX.Element {
   return (
-    <div className="comment p-24">
-      <div className="vote-container">
-        <img className="upvote vote-icon" src={upvoteImage} alt="upvote" />
+    <div className="comment p-24 br-12">
+      <div className="vote-container br-12">
+        <button className="secondary-btn p-0" type="button">
+          <img className="upvote vote-icon" src={upvoteImage} alt="upvote" />
+        </button>
         <div className="votes">12</div>
-        <img
-          className="downvote vote-icon"
-          src={downvoteImage}
-          alt="downvote"
-        />
+        <button className="secondary-btn p-0" type="button">
+          <img
+            className="downvote vote-icon"
+            src={downvoteImage}
+            alt="downvote"
+          />
+        </button>
       </div>
       <div className="comment-text">
         <div className="user-info">
@@ -29,10 +33,10 @@ export default function Comment(): JSX.Element {
           </p>
         </div>
       </div>
-      <div className="reply">
-        <img src={replyImage} alt="reply" />
-        <p>Reply</p>
-      </div>
+      <button className="secondary-btn reply" type="button">
+        <img src={replyImage} alt="" />
+        <span>Reply</span>
+      </button>
     </div>
   );
 }

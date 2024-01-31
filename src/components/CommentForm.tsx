@@ -6,7 +6,7 @@ export default function CommentForm(): JSX.Element {
   };
 
   return (
-    <div className="form-container p-24">
+    <div className="form-container p-24 br-12">
       <form
         className="comment-form"
         action=""
@@ -20,7 +20,9 @@ export default function CommentForm(): JSX.Element {
           placeholder="Add a comment..."
           rows={3}
         ></textarea>
-        <button type="submit">Send</button>
+        <button className="main-btn btn" type="submit">
+          Send
+        </button>
       </form>
     </div>
   );
