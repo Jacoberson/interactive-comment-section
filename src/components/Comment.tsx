@@ -1,16 +1,32 @@
 import upvoteImage from "/assets/icon-plus.svg";
 import downvoteImage from "/assets/icon-minus.svg";
 import replyImage from "/assets/icon-reply.svg";
-import avatar from "/assets/avatars/image-amyrobson.png";
 
-export default function Comment(): JSX.Element {
+interface User {
+  image: { png: string; webp: string };
+  username: string;
+}
+
+interface CommentProps {
+  content: string;
+  createdAt: string;
+  score: number;
+  user: User;
+}
+
+export default function Comment({
+  content,
+  createdAt,
+  score,
+  user,
+}: CommentProps): JSX.Element {
   return (
     <div className="comment p-24 br-12">
       <div className="vote-container br-12">
         <button className="secondary-btn p-0" type="button">
           <img className="upvote vote-icon" src={upvoteImage} alt="upvote" />
         </button>
-        <div className="votes">12</div>
+        <div className="votes">{score}</div>
         <button className="secondary-btn p-0" type="button">
           <img
             className="downvote vote-icon"
@@ -21,16 +37,12 @@ export default function Comment(): JSX.Element {
       </div>
       <div className="comment-text">
         <div className="user-info">
-          <img className="avatar-sm" src={avatar} alt="avatar" />
-          <h3>amyrobson</h3>
-          <p className="created-at">1 month ago</p>
+          <img className="avatar-sm" src={user.image.png} alt="avatar" />
+          <h3>{user.username}</h3>
+          <p className="created-at">{createdAt}</p>
         </div>
         <div className="content-container">
-          <p className="content">
-            Impressive! Though it seems the drag feature could be improved. But
-            overall it looks incredible. You've nailed the design and the
-            responsiveness at various breakpoints works really well.
-          </p>
+          <p className="content">{content}</p>
         </div>
       </div>
       <button className="secondary-btn reply" type="button">
