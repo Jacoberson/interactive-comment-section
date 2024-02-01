@@ -7,8 +7,18 @@ function App() {
   return (
     <>
       {data.comments.map(comment => {
-        <Comment />;
+        return (
+          <li key={comment.id}>
+            <Comment
+              content={comment.content}
+              createdAt={comment.createdAt}
+              score={comment.score}
+              user={comment.user}
+            />
+          </li>
+        );
       })}
+
       <CommentForm />
     </>
   );

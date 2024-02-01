@@ -1,4 +1,4 @@
-import avatar from "../../public/assets/avatars/image-juliusomo.png";
+// import avatar from "/assets/images/image-juliusomo.png";
 
 export default function CommentForm(): JSX.Element {
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -13,7 +13,7 @@ export default function CommentForm(): JSX.Element {
         method="POST"
         onSubmit={handleSubmit}
       >
-        <img className="avatar-lg" src={avatar} alt="avatar" />
+        {/* <img className="avatar-lg" src={avatar} alt="avatar" /> */}
         <textarea
           id="comment"
           name="comment"
