@@ -38,7 +38,7 @@ export default function Comment({
       <div className="comment-text">
         <div className="user-info">
           <img className="avatar-sm" src={user.image.png} alt="avatar" />
-          <h3>{user.username}</h3>
+          <h3 className="username">{user.username}</h3>
           <p className="created-at">{createdAt}</p>
         </div>
         <div className="content-container">

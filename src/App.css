@@ -30,6 +30,95 @@
   background-color: var(--very-light-gray);
 }
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   height: 100vh;
@@ -39,6 +128,10 @@ button {
   cursor: pointer;
   border: none;
   padding: 8px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .p-0 {
@@ -71,8 +164,14 @@ button {
   opacity: 0.2;
 }
 
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .comment {
-  max-width: 770px;
+  max-width: 730px;
   margin: auto;
   background-color: var(--white);
   display: flex;
@@ -111,6 +210,10 @@ button {
   gap: 16px;
 }
 
+.username {
+  margin: 0;
+}
+
 .avatar-sm {
   width: 32px;
   height: 32px;
@@ -135,8 +238,10 @@ button {
   display: flex;
   gap: 8px;
   align-self: baseline;
-  margin-top: 16px;
+  margin-top: 12px;
+  font-size: var(--paragraph);
   font-weight: var(--bold);
+  color: var(--moderate-blue);
   padding: 8px;
 }
 
