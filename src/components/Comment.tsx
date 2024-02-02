@@ -1,3 +1,4 @@
+import { useState } from "react";
 import upvoteImage from "/assets/icon-plus.svg";
 import downvoteImage from "/assets/icon-minus.svg";
 import replyImage from "/assets/icon-reply.svg";
@@ -20,14 +21,35 @@ export default function Comment({
   score,
   user,
 }: CommentProps): JSX.Element {
+  const [vote, setVote] = useState(score);
+
+  const handleVoteChange = (voteChange: "upvote" | "downvote") => {
+    switch (voteChange) {
+      case "upvote":
+        setVote(vote + 1);
+        break;
+      case "downvote":
+        setVote(vote - 1);
+        break;
+    }
+  };
+
   return (
     <div className="comment p-24 br-12">
       <div className="vote-container br-12">
-        <button className="secondary-btn p-0" type="button">
+        <button
+          className="secondary-btn p-0"
+          type="button"
+          onClick={() => handleVoteChange("upvote")}
+        >
           <img className="upvote vote-icon" src={upvoteImage} alt="upvote" />
         </button>
-        <div className="votes">{score}</div>
-        <button className="secondary-btn p-0" type="button">
+        <div className="votes">{vote}</div>
+        <button
+          className="secondary-btn p-0"
+          type="button"
+          onClick={() => handleVoteChange("downvote")}
+        >
           <img
             className="downvote vote-icon"
             src={downvoteImage}
