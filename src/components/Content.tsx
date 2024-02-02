@@ -2,25 +2,15 @@ import { useState } from "react";
 import upvoteImage from "/assets/icon-plus.svg";
 import downvoteImage from "/assets/icon-minus.svg";
 import replyImage from "/assets/icon-reply.svg";
+import { ContentProps } from "../types";
 
-interface User {
-  image: { png: string; webp: string };
-  username: string;
-}
-
-interface CommentProps {
-  content: string;
-  createdAt: string;
-  score: number;
-  user: User;
-}
-
-export default function Comment({
+export default function Content({
   content,
   createdAt,
   score,
+  replyingTo,
   user,
-}: CommentProps): JSX.Element {
+}: ContentProps): JSX.Element {
   const [vote, setVote] = useState(score);
 
   const handleVoteChange = (voteChange: "upvote" | "downvote") => {
@@ -35,7 +25,7 @@ export default function Comment({
   };
 
   return (
-    <div className="comment p-24 br-12">
+    <div className={`${replyingTo ? "reply" : "comment"} p-24 br-12`}>
       <div className="vote-container br-12">
         <button
           className="secondary-btn p-0"
@@ -64,10 +54,15 @@ export default function Comment({
           <p className="created-at">{createdAt}</p>
         </div>
         <div className="content-container">
-          <p className="content">{content}</p>
+          <p className="content">
+            {replyingTo && (
+              <span className="replying-to">@{replyingTo}&nbsp;</span>
+            )}
+            {content}
+          </p>
         </div>
       </div>
-      <button className="secondary-btn reply" type="button">
+      <button className="secondary-btn reply-btn" type="button">
         <img src={replyImage} alt="" />
         <span>Reply</span>
       </button>

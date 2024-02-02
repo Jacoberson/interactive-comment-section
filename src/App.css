@@ -91,7 +91,7 @@ ul {
 }
 
 .main-btn:active,
-.reply:active {
+.reply-btn:active {
   opacity: 0.2;
 }
 
@@ -101,12 +101,27 @@ ul {
   gap: 20px;
 }
 
-.comment {
+.comment,
+.reply {
   max-width: 730px;
   margin: auto;
   background-color: var(--white);
   display: flex;
   gap: 24px;
+}
+
+ul.replies {
+  max-width: 685px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-left: 2px solid var(--light-gray);
+}
+
+ul.replies li {
+  margin-left: 43px;
+  min-width: 97%;
 }
 
 .vote-container {
@@ -119,6 +134,7 @@ ul {
   height: 100px;
   align-self: center;
   padding: 12px 5px 16px 5px;
+  margin-bottom: auto;
 }
 
 .vote-icon {
@@ -139,6 +155,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-bottom: 20px;
 }
 
 .username {
@@ -165,11 +182,15 @@ ul {
   line-height: 1.5;
 }
 
-.reply {
+.replying-to {
+  color: var(--moderate-blue);
+  font-weight: var(--bold);
+}
+
+.reply-btn {
   display: flex;
   gap: 8px;
   align-self: baseline;
-  margin-top: 12px;
   font-size: var(--paragraph);
   font-weight: var(--bold);
   color: var(--moderate-blue);

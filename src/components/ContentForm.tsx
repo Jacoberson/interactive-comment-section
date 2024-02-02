@@ -1,4 +1,4 @@
-import avatar from "../../public/images/avatars/image-juliusomo.png";
+import avatar from "/images/avatars/image-juliusomo.png";
 
 export default function CommentForm(): JSX.Element {
   const handleSubmit = (e: React.SyntheticEvent) => {
