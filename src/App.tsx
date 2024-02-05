@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import Content from "./components/Content";
 import ContentForm from "./components/ContentForm";
 import "./App.css";
 import data from "../data.json";
 
+export const UserContext = createContext({});
+
 function App() {
+  const user = data.currentUser;
+  const [comments, setComments] = useState(data.comments);
+
   return (
-    <>
+    <UserContext.Provider value={user}>
       <ul className="comments">
-        {data.comments.map(comment => {
+        {comments.map(comment => {
           return (
             <React.Fragment key={comment.id}>
               <li>
@@ -40,8 +45,9 @@ function App() {
           );
         })}
       </ul>
-      <ContentForm />
-    </>
+      {/* @ts-expect-error (fix type later)*/}
+      <ContentForm comments={comments} setComments={setComments} />
+    </UserContext.Provider>
   );
 }
 

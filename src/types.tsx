@@ -10,3 +10,5 @@ export interface ContentProps {
   replyingTo?: string;
   user: User;
 }
+
+export type CommentUpdateFunction = (comments: Array<object>) => void;
